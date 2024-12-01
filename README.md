@@ -1,24 +1,7 @@
-# advent_of_code
+# Advent of Code - Gleam
 
-[![Package Version](https://img.shields.io/hexpm/v/advent_of_code)](https://hex.pm/packages/advent_of_code)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/advent_of_code/)
+![Static Badge](https://img.shields.io/badge/Vers%C3%A3o-0.04.1-pink)
 
-```sh
-gleam add advent_of_code@1
-```
-```gleam
-import advent_of_code
+Minhas respostas para o Advent of Code.
 
-pub fn main() {
-  // TODO: An example of the project in use
-}
-```
-
-Further documentation can be found at <https://hexdocs.pm/advent_of_code>.
-
-## Development
-
-```sh
-gleam run   # Run the project
-gleam test  # Run the tests
-```
+Usando o pacote [Gladvent](https://hex.pm/packages/gladvent).
