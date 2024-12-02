@@ -30,28 +30,26 @@ pub fn pt_1(input: List(List(Int))) -> Int {
   |> list.map(fn(relatorio) {
     let relatorio_ordenado = relatorio |> list.sort(int.compare)
 
+    // Caso o relatório for igual a ele mesmo ordenado, ou de trás-para-frente...
     case
       relatorio == relatorio_ordenado,
       relatorio == list.reverse(relatorio_ordenado)
     {
-      False, False -> io.debug(False)
-      False, True | True, False -> {
-        io.debug(relatorio)
-        io.debug(relatorio_ordenado)
+      False, False -> False
+      // Se qualquer um dos casos for verdade...
+      //  Divide o relatório em pares,
+      //  Mapeia-o, retornando o valor absoluto da diferença do par,
+      //  Se todos os elementos da lista forem >= 1 e <= 3, retorna True.
+      _, _ -> {
         relatorio
         |> list.window_by_2
         |> list.map(fn(par) { int.absolute_value(par.0 - par.1) })
-        |> io.debug
         |> list.all(fn(nivel) { nivel >= 1 && nivel <= 3 })
       }
-      _, _ -> io.debug(False)
     }
-    // relatorio == relatorio_ordenado
-    // || relatorio
-    // == relatorio_ordenado_reverso
-    // |> io.debug
   })
-  |> list.count(fn(nivel) { nivel == True })
+  // Conta quantos True existem na lista de relatórios.
+  |> list.count(fn(relatorio) { relatorio == True })
 }
 
 pub fn pt_2(input: List(List(Int))) {
