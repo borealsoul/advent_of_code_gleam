@@ -17,11 +17,7 @@ pub fn parse(input: String) -> List(List(Int)) {
   |> list.map(fn(relatorio) {
     relatorio
     |> string.split(on: " ")
-    |> list.map(fn(nivel) {
-      nivel
-      |> int.parse
-      |> result.unwrap(0)
-    })
+    |> list.filter_map(int.parse)
   })
 }
 
